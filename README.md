@@ -16,7 +16,7 @@ SE150543 Trần Văn Trí
 
 1. Video demo: <a href="https://drive.google.com/file/d/1FP8s6kdNpkjc9lBy-Y1iIZ3ooXADVcZd/view?fbclid=IwAR0FpH_UOXCPqtgC2GgI1SR1mHR6mCFz7aYhasus7seGUjmlersp0R6NFz8">Link Video Instruction about TestComplete</a>
 
-2. Document: <a href="https://drive.google.com/file/d/1FP8s6kdNpkjc9lBy-Y1iIZ3ooXADVcZd/view?fbclid=IwAR0FpH_UOXCPqtgC2GgI1SR1mHR6mCFz7aYhasus7seGUjmlersp0R6NFz8">Deployment Guildline and Install document</a>
+2. Document: <a href="https://docs.google.com/document/d/19YTE2kgwFDBj0YIcT3mqEHyqpFTYPAXNq1qI-FzmMmA/edit?fbclid=IwAR0gPwESusUwl4jZahwMenFj3ecC-f1xWoBCJbqer9CkZ74XPia4SFojzhY">Deployment Guildline and Install document</a>
 
 3. Slide: <a href="https://www.canva.com/design/DAFEPxU8NkU/leWkiWx8luoCOmS0JYasGw/edit?utm_content=DAFEPxU8NkU&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton&fbclid=IwAR2XrtaSlrbEwRVvthP1MgIHfkwekhbE8N_I3EzOSb-3lnxPezLY0b7fQ0c">Slide giới thiệu TestComplete</a>
 
