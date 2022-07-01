@@ -1,0 +1,154 @@
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="author" content="colorlib.com">
+  <link href="https://fonts.googleapis.com/css?family=Lato:400,600,700" rel="stylesheet" />
+  <link href="css/main.css" rel="stylesheet" />
+</head>
+
+<body>
+  <div class="s009 gradient-custom-2">
+    <form onsubmit="return false">
+      <div class="inner-form"
+        style="box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px; border-radius: 0.5rem;">
+        <div class="advance-search" style="border-radius: 0.5rem;">
+          <span class="desc">CHECK DATE</span>
+          <div class="row">
+            <div class="input-field">
+              <div class="input-select">
+                <select id="Day" name="choiceDay">
+                  <option selected disabled value="">NGÀY</option>
+                </select>
+              </div>
+            </div>
+            <div class="input-field">
+              <div class="input-select">
+                <select id="Month" name="choiceMonth">
+                  <option selected disabled value="">THÁNG</option>
+                </select>
+              </div>
+            </div>
+            <div class="input-field">
+              <div class="input-select">
+                <select id="Year" name="choiceYear">
+                  <option selected disabled value="">NĂM</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="row third">
+            <div class="input-field">
+              <div class="result-count">
+                <h2 id="Message" style="color: #26c741;"></h2>
+              </div>
+              <div class="group-btn">
+                <button class="btn-delete" id="delete">RESET</button>
+                <button type="button" onclick="checkDate()" class="btn-search">CHECK</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+  <script>
+
+    //load Ngay 
+    var day = document.getElementById("Day");
+    var iDay = 0;
+    for (iDay = 1; iDay <= 31; iDay++) {
+      var optNgay = document.createElement("option");
+      optNgay.appendChild(document.createTextNode(iDay));
+      optNgay.value = iDay;
+      day.appendChild(optNgay);
+
+    }
+
+    //load Thang   
+    var month = document.getElementById("Month");
+    var iMonth = 0;
+    for (iMonth = 1; iMonth <= 12; iMonth++) {
+      var optThang = document.createElement("option");
+      optThang.appendChild(document.createTextNode(iMonth));
+      optThang.value = iMonth;
+      month.appendChild(optThang);
+
+    }
+
+    //load Nam   
+    var year = document.getElementById("Year");
+    var iYear = 0;
+    for (iYear = 1950; iYear <= 3000; iYear++) {
+      var optNam = document.createElement("option");
+      optNam.appendChild(document.createTextNode(iYear));
+      optNam.value = iYear;
+      year.appendChild(optNam);
+
+    }
+
+    function checkDate() {
+
+      var dayCheck = parseInt(document.getElementById("Day").value);
+      var monthCheck = parseInt(document.getElementById("Month").value);
+      var yearCheck = parseInt(document.getElementById("Year").value);
+      var dayMax;
+
+      switch (monthCheck) {
+        case 1:
+        case 3:
+        case 5:
+        case 7:
+        case 8:
+        case 10:
+        case 12:
+          dayMax = 31;
+          break;
+        case 2:
+          if ((yearCheck % 4 == 0 && yearCheck % 100 != 0) || (yearCheck % 400 == 0))
+            dayMax = 29;
+          else
+            dayMax = 28;
+          break;
+        case 4:
+        case 6:
+        case 9:
+        case 11:
+          dayMax = 30;
+          break;
+      }
+      if (dayCheck <= dayMax) {
+        document.getElementById("Message").innerHTML = "VALID DATE";
+        document.getElementById("Message").style.color = "#26c741";;
+      } else if (dayCheck > dayMax) {
+        document.getElementById("Message").innerHTML = "INVALID DATE";
+        document.getElementById("Message").style.color = "#c72626";;
+      }
+
+    }
+
+  </script>
+  <script src="js/extention/choices.js"></script>
+  <script>
+    const customSelects = document.querySelectorAll("select");
+    const deleteBtn = document.getElementById('delete')
+    const choices = new Choices('select',
+      {
+        searchEnabled: false,
+        itemSelectText: '',
+        removeItemButton: true,
+      });
+    deleteBtn.addEventListener("click", function (e) {
+      e.preventDefault()
+      const deleteAll = document.querySelectorAll('.choices__button')
+      for (let i = 0; i < deleteAll.length; i++) {
+        deleteAll[i].click();
+      }
+    });
+
+  </script>
+</body>
+
+</html>
